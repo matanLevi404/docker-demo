@@ -13,6 +13,7 @@ node {
        sh 'npm install --only=dev'
        sh 'npm test'
        sh 'npm start'
+       sh 'bash'
      }
    }                                                                     
 }                                          
