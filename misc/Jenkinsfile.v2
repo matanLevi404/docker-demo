@@ -6,6 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('Clean') {
+     sh 'chmod +x "/var/jenkins_home/workspace/NodeJS Pipeline/StopByPort.sh"'
      sh '"/var/jenkins_home/workspace/NodeJS Pipeline/StopByPort.sh" 3000'
    }
    stage('test') {
