@@ -19,8 +19,7 @@ node {
      }
    }                
    stage('run app'){
-      sh 'docker exec -it nodeJS-App bash'
-      sh 'cd "/var/jenkins_home/workspace/NodeJS Pipeline/"'
-      sh 'npm start&'
+       sh 'chmod +x "/var/jenkins_home/workspace/NodeJS Pipeline/StartByPort.sh"'
+       sh '"/var/jenkins_home/workspace/NodeJS Pipeline/StartByPort.sh" 3000'
    }
 }                                          
