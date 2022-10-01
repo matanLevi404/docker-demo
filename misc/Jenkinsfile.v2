@@ -8,6 +8,7 @@ node {
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
+     myTestContainer.run('-p 3000:3000' + ' -v /var/jenkins_home/:/var/jenkins_home')
      myTestContainer.inside {
        sh 'npm install --only=dev'
        sh 'npm test'
