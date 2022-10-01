@@ -16,8 +16,8 @@ node {
      myTestContainer.inside {
        sh 'npm install --only=dev'
        sh 'npm test'
-       bash 'cd "/var/jenkins_home/workspace/NodeJS Pipeline/StopByPort.sh"'
-       bash 'npm start&'
+       sh 'cd "/var/jenkins_home/workspace/NodeJS Pipeline/StopByPort.sh"'
+       sh 'npm start&'
      }
    }                                                                     
 }                                          
