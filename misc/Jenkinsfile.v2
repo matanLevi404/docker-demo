@@ -6,7 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('Clean') {
-     sh '/var/jenkins_home/workspace/NodeJS\ Pipeline/StopByPort.sh 3000'
+     sh '"/var/jenkins_home/workspace/NodeJS Pipeline/StopByPort.sh" 3000'
    }
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
