@@ -12,6 +12,9 @@ node {
      myTestContainer.inside {
        sh 'npm install --only=dev'
        sh 'npm test'
+       sh 'bash'
+       sh 'cd /var/jenkins_home/workspace/NodeJS Pipeline'
+       sh 'npm start'
      }
    }                                                                     
 }                                          
