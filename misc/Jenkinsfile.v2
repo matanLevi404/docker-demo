@@ -16,8 +16,11 @@ node {
      myTestContainer.inside {
        sh 'npm install --only=dev'
        sh 'npm test'
-       sh 'cd "/var/jenkins_home/workspace/NodeJS Pipeline/"'
-       sh 'npm start&'
      }
-   }                                                                     
+   }                
+   stage('run app'){
+      sh 'docker exec -it nodeJS-App bash'
+      sh 'cd "/var/jenkins_home/workspace/NodeJS Pipeline/"'
+      sh 'npm start&'
+   }
 }                                          
