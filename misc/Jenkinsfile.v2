@@ -10,9 +10,7 @@ node {
      sh '"/var/jenkins_home/workspace/NodeJS Pipeline/StopByPort.sh" 3000'
    }
    stage('test') {
-      def imgTag ='nodejs-app:${env.BUILD_ID}'
-      sh 'echo ${imgTag}'
-      def myTestContainer = docker.build(imgTag)
+      def myTestContainer = docker.build('nodejs-app')
       //myTestContainer.pull()
       myTestContainer.run('-it --name nodeJS-App -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home/:/var/jenkins_home')
    }
